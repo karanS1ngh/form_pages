@@ -1,0 +1,57 @@
+    <label ng-if="!x.answerable"  style="font-weight: 400;" class="checkbox minotaur-radio">Old Subject
+                            <input ng-value="'old'" ng-model="x.answer" ng-click="vm.new[$index]=false; vm.old[$index]=true" uib-tooltip="{{x.info}}" name="{{x.subject}}" type="radio">
+                            <div class="input-indicator"></div>
+                          </label>
+
+                          <label ng-if="!x.answerable"  style="font-weight: 400;" class="checkbox minotaur-radio">New Subject
+                            <input ng-value="'new'" ng-model="x.answer" ng-click="vm.new[$index]=true; vm.old[$index]=false" uib-tooltip="{{x.info}}" name="{{x.subject}}" type="radio">
+                            <div class="input-indicator"></div>
+                          </label>
+                    </td>
+
+                    <td >
+                        <span ng-if="vm.new[$index]">
+                            <div class="col-md-10">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>college name</th>
+                                        <th>Marks</th>
+                                    </tr>
+                                    <tr ng-repeat = "y in x.new">
+                                        <td><input class="form-control" type="text" ng-model="vm.A5[$parent.$index].new[$index].name" name="" id=""></td>
+                                        <td><input class="form-control" type="text" ng-model="vm.A5[$parent.$index].new[$index].marks" name="" id=""></td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="btn-toolbar mb-10" role="toolbar">
+                                    <div class="btn-group btn-group-rounded-20">
+                                        <button type="button" class="btn btn-default" ng-click="vm.addrow_a5($index)"><i
+                                                class="fa fa-plus"></i></button>
+                                        <button type="button" class="btn btn-default" ng-click="vm.delrow_a5($index)"><i
+                                                class="fa fa-minus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+
+                        <span ng-if="vm.old[$index]">
+                            <table>
+                                <tr>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                </tr>
+                                <tr>
+                                    <td>ex</td>
+                                    <td>ex</td>
+                                </tr>
+                            </table>
+                        </span>
+
+                    </td>
+                </tr>
+
